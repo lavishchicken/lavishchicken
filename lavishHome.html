@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Frozen Chicken & Eggs</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #fdfdfd;
+    }
+    header {
+      background-color: #6495ed;
+      color: white;
+      padding: 15px 0;
+      text-align: center;
+    }
+    .section-title {
+      text-align: center;
+      color: #ff69b4;
+      margin-top: 30px;
+    }
+    .product-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin: 15px;
+      width: 250px;
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.2s ease-in-out;
+    }
+    .card:hover {
+      transform: scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .card h3 {
+      color: #333;
+      padding: 10px 0 0;
+    }
+    .card p {
+      color: #555;
+      margin: 0;
+    }
+    .card .price {
+      font-weight: bold;
+      color: #ff69b4;
+      margin: 10px 0;
+    }
+    .card a {
+      display: inline-block;
+      background-color: #6495ed;
+      color: white;
+      padding: 10px;
+      margin: 10px;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+    footer {
+      text-align: center;
+      padding: 10px;
+      background-color: #eee;
+      margin-top: 40px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+      <img src="images/logo.png" width="120px" height="120px" class="logo" alt="Logo" />
+      <h1>Frozen Chicken & Eggs Store</h1>
+      <p>Rock-solid frozen poultry delivered to your doorstep</p>
+      <p>PAYMENT ON DELIVERY!!!</p>
+  </header>
+
+  <h2 class="section-title">Frozen Chicken Products</h2>
+  <div class="product-grid">
+    <div class="card">
+      <img src="images/whole_chicken.jpg" alt="Whole Chicken">
+      <h3>Whole Chicken</h3>
+      <p class="price">₦7000</p>
+      <a href="order.html?product=Whole Chicken">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/cut4.jpg" alt="Whole Chicken Cut 4">
+      <h3>Whole Chicken Cut 4</h3>
+      <p class="price">₦7500</p>
+      <a href="order.html?product=Whole Chicken Cut 4">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/laps.jpg" alt="Chicken Laps">
+      <h3>Chicken Laps (1kg)</h3>
+      <p class="price">₦4500</p>
+      <a href="order.html?product=Chicken Laps (1kg)">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/1kg.jpg" alt="1kg Chicken Parts">
+      <h3>1kg Chicken Parts</h3>
+      <p class="price">₦4000</p>
+      <a href="order.html?product=1kg Chicken parts">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/5kg.jpg" alt="5kg Chicken parts">
+      <h3>5kg Chicken parts (Half Carton)</h3>
+      <p class="price">₦19,000</p>
+      <a href="order.html?product=5kg Chicken parts">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/10kg.jpg" alt="10kg Chicken parts">
+      <h3>10kg Chicken parts (One Carton)</h3>
+      <p class="price">₦37,000</p>
+      <a href="order.html?product=10kg Chicken parts">Order Now</a>
+    </div>
+  </div>
+
+  <h2 class="section-title">Eggs</h2>
+  <div class="product-grid">
+    <div class="card">
+      <img src="images/eggsBig.jpg" alt="Big Eggs">
+      <h3>Big Eggs (1 crate)</h3>
+      <p class="price">₦3000</p>
+      <a href="order.html?product=Big Eggs">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/eggsMed.jpg" alt="Medium Eggs">
+      <h3>Medium Eggs (1 crate)</h3>
+      <p class="price">₦2800</p>
+      <a href="order.html?product=Medium Eggs">Order Now</a>
+    </div>
+    <div class="card">
+      <img src="images/eggsSmall.jpg" alt="Small Eggs">
+      <h3>Small Eggs (1 crate)</h3>
+      <p class="price">₦2500</p>
+      <a href="order.html?product=Small Eggs">Order Now</a>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Frozen Chicken & Eggs. All rights reserved.
+  </footer>
+
+</body>
+</html>

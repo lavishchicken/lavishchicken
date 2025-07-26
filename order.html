@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Order Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #fdfdfd;
+    }
+    h1 {
+      text-align: center;
+      color: #6495ed;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    label {
+      display: block;
+      margin: 12px 0 4px;
+      font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background-color: #ff69b4;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 4px;
+      width: 100%;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #e85aa5;
+    }
+    .success {
+      color: green;
+      text-align: center;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Place Your Order</h1>
+  <form id="orderForm">
+    <label for="product">Product</label>
+    <input type="text" id="product" name="Product" readonly />
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="Name" required />
+
+    <label for="phone">Phone Number</label>
+    <input type="tel" id="phone" name="Phone" required />
+
+    <label for="quantity">Quantity</label>
+    <input type="number" id="quantity" name="Quantity" required min="1" value="1" />
+
+    <label for="address">Delivery Address</label>
+    <textarea id="address" name="Address" rows="3" required></textarea>
+
+    <button type="submit">Submit Order</button>
+    <div class="success" id="successMsg"></div>
+  </form>
+
+  <script>
+    // Autofill product from URL query string
+    const urlParams = new URLSearchParams(window.location.search);
+    const product = urlParams.get("product");
+    if (product) {
+      document.getElementById("product").value = product;
+    }
+
+    // Handle form submission
+    document.getElementById("orderForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+      const form = e.target;
+      const data = new FormData(form);
+
+      fetch("https://script.google.com/macros/s/AKfycbzBErZGAvO4Mts4B1Eq1RK1EC5KiPx7QlETdY6FEETOsU4LkaTZI13R8_-XhZ41Ry_P/exec", {
+        method: "POST",
+        body: data
+      })
+      .then(res => res.text())
+      .then(response => {
+        document.getElementById("successMsg").innerText = "✅ Order submitted successfully!";
+        form.reset();
+        setTimeout(() => {
+          window.location.href = "index.html";
+        }, 3000);
+      })
+      .catch(err => alert("Error submitting order"));
+    });
+  </script>
+</body>
+</html>
